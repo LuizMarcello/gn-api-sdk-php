@@ -47,7 +47,7 @@
                 </ul>
 
                 <ul class="nav navbar-nav pull-right">
-                    <li class=""><a target="blank" href="https://gerencianet.com.br/#login">Entrar</a>
+                    <li class=""><a target="blank" href="https://gerencianet.com.br/login">Entrar</a>
                     </li>
                     <li class=""><a target="blank" href="https://gerencianet.com.br/#abrirconta">Abra sua conta</a>
                     </li>
@@ -56,8 +56,6 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-
-
 
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="col-lg-8 well">

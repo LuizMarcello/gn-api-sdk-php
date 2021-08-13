@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Bentley Satélite</title>
+    <title>Bentley Juruena</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
@@ -29,24 +28,16 @@
                             <img height="80" src="https://sistema.bentleybrasil.com.br/img/logo-empresa-br.png">
                         </span>
 
-                        <li class="nav-item">
-                            <a class="nav-link {{ Route::current()->getName() === 'bentley.home' ? 'active' : '' }}"
-                                aria-current="page" href="{{ route('bentley.home') }}">Home</a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link {{ Route::current()->getName() === 'bentley.produtos' ? 'active' : '' }}"
-                                href="{{ route('bentley.produtos') }}">Produtos</a>
-                        </li>
 
-                        <li>
-                            <a class="nav-link" href="{{ route('bentley.comprar.boleto') }}">Boleto</a>
-                        </li>
+                        <a class="nav-link {{ Route::current()->getName() === 'bentley.home' ? 'active' : '' }}"
+                            aria-current="page" href="{{ route('bentley.home') }}">Home</a>
 
-                        <li>
-                            <a class="nav-link" href="{{ route('bentley.comprar.cartao') }}">Cartão de
-                                crédito</a>
-                        </li>
+                        <a class="nav-link {{ Route::current()->getName() === 'bentley.produtos' ? 'active' : '' }}"
+                            href="{{ route('bentley.produtos') }}">Detalhes dos Produtos</a>
+
+
+
                     </ul>
                 </div>
             </div>
@@ -54,14 +45,29 @@
     </header>
 
     <main>
-
         @yield('content')
 
+        {{-- <li>
+            <a class="nav-link" href="{{ route('bentley.comprar.boleto') }}">Comprar</a>
+        </li> --}}
+
+        {{-- <li>
+            <a class="nav-link" href="{{ route('bentley.comprar.boleto') }}">Boleto</a>
+        </li>
+
+        <li>
+            <a class="nav-link" href="{{ route('bentley.comprar.cartao') }}">Cartão de crédito</a>
+        </li> --}}
+
         <!-- FOOTER -->
-        <footer class="container">
-            <p class="float-end"><a href="#">Back to top</a></p>
-            <p>&copy; {{ date('Y') }} Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
-            </p>
+        <footer class="main-footer">
+            <br>
+            <br>
+            <div class="float-right d-none d-sm-block">
+                <b>Satellite Broadband Networks</b> 1.0-rc
+            </div>
+            <strong>Copyright &copy; {{ date('Y') }} <a href="https://adminlte.io"> Bentley Brasil - Projeto
+                    Juruena</a>.</strong> Todos os direitos reservados
         </footer>
     </main>
 

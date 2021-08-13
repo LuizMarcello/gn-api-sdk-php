@@ -1,17 +1,17 @@
 <?php
 
-require __DIR__ . '/../api/vendor/autoload.php';
+require '../vendor/autoload.php';
 
 use Gerencianet\Exception\GerencianetException;
 use Gerencianet\Gerencianet;
 
-$clientId = '';
-$clientSecret = '';
+$clientId = 'Client_Id_f59589b32e4af8c830014d5f7a4caec26741770d';
+$clientSecret = 'Client_Secret_ba04464d354e740abc603c2e7005b4b097b9234c';
 
 $options = [
     'client_id' => $clientId,
     'client_secret' => $clientSecret,
-    'sandbox' => false
+    'sandbox' => true
 ];
 
 if (isset($_POST)) {
