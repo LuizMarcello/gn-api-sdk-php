@@ -27,17 +27,11 @@
                         <span class="brand-text font-weight-light">
                             <img height="80" src="https://sistema.bentleybrasil.com.br/img/logo-empresa-br.png">
                         </span>
-
-
-
                         <a class="nav-link {{ Route::current()->getName() === 'bentley.home' ? 'active' : '' }}"
                             aria-current="page" href="{{ route('bentley.home') }}">Home</a>
 
                         <a class="nav-link {{ Route::current()->getName() === 'bentley.produtos' ? 'active' : '' }}"
                             href="{{ route('bentley.produtos') }}">Detalhes dos Produtos</a>
-
-
-
                     </ul>
                 </div>
             </div>
@@ -46,29 +40,32 @@
 
     <main>
         @yield('content')
+        
+        <ul>
+            <li>
+                <a class="nav-link" href="{{ route('bentley.comprar.boleto') }}">Comprar</a>
+            </li>
 
-        {{-- <li>
-            <a class="nav-link" href="{{ route('bentley.comprar.boleto') }}">Comprar</a>
-        </li> --}}
+            <li>
+                <a class="nav-link" href="{{ route('bentley.comprar.boleto') }}">Boleto</a>
+            </li>
 
-        {{-- <li>
-            <a class="nav-link" href="{{ route('bentley.comprar.boleto') }}">Boleto</a>
-        </li>
-
-        <li>
-            <a class="nav-link" href="{{ route('bentley.comprar.cartao') }}">Cartão de crédito</a>
-        </li> --}}
+            <li>
+                <a class="nav-link" href="{{ route('bentley.comprar.cartao') }}">Cartão de crédito</a>
+            </li>
+        </ul>
 
         <!-- FOOTER -->
         <footer class="main-footer">
-            <br>
-            <br>
-            <div class="float-right d-none d-sm-block">
-                <b>Satellite Broadband Networks</b> 1.0-rc
+            <div style="padding: 20px 20px 20px 20px;">
+                <div class="float-right d-none d-sm-block">
+                    <b>Satellite Broadband Networks</b> 1.0-rc
+                </div>
+                <strong>Copyright &copy; {{ date('Y') }} <a href="https://adminlte.io"> Bentley Brasil - Projeto
+                        Juruena</a>.</strong> Todos os direitos reservados
             </div>
-            <strong>Copyright &copy; {{ date('Y') }} <a href="https://adminlte.io"> Bentley Brasil - Projeto
-                    Juruena</a>.</strong> Todos os direitos reservados
         </footer>
+
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
