@@ -1,58 +1,43 @@
-<!DOCTYPE html>
+@extends('bentley.master.layout')
 
-<html>
+@section('content')
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/codigos-documentacao/">
+                <img src="https://gerencianet.com.br/wp-content/themes/Gerencianet/images/marca-gerencianet.svg"
+                    onerror="this.onerror=null; this.src='images/marca-gerencianet.png'"
+                    alt="Gerencianet - Conceito em Pagamentos" width="218" height="31">
+            </a>
+        </div>
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../bootstrap/css/style.css">
-    <script type="text/javascript" src="../bootstrap/js/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
 
-    <script type="text/javascript" src="../bootstrap/js/jquery.mask.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/scripts.js"></script>
-    <title>Gerencianet boletos</title>
-</head>
+                <li class=""><a href="https://dev.gerencianet.com.br/docs">Documentação</a></li>
+                <li class=""><a href="https://dev.gerencianet.com.br/docs/fale-conosco">Contatos</a></li>
+                <li class=""><a href="{{ route('bentley.home') }}">Retornar a Bentley Brasil</a></li>
+            </ul>
 
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/codigos-documentacao/">
-                    <img src="https://gerencianet.com.br/wp-content/themes/Gerencianet/images/marca-gerencianet.svg"
-                        onerror="this.onerror=null; this.src='images/marca-gerencianet.png'"
-                        alt="Gerencianet - Conceito em Pagamentos" width="218" height="31">
-                </a>
-            </div>
+            <ul class="nav navbar-nav pull-right">
+                <li class=""><a target="blank" href="https://gerencianet.com.br/login">Entrar</a>
+                </li>
+                <li class=""><a target="blank" href="https://gerencianet.com.br/#abrirconta">Abra sua conta</a>
+                </li>
+            </ul>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-
-                    <li class=""><a href="https://dev.gerencianet.com.br/docs">Documentação</a></li>
-                    <li class=""><a href="https://dev.gerencianet.com.br/docs/fale-conosco">Contatos</a></li>
-                    <li class=""><a href="{{ route('bentley.home') }}">Retornar a Bentley Brasil</a></li>
-                </ul>
-
-                <ul class="nav navbar-nav pull-right">
-                    <li class=""><a target="blank" href="https://gerencianet.com.br/login">Entrar</a>
-                    </li>
-                    <li class=""><a target="blank" href="https://gerencianet.com.br/#abrirconta">Abra sua conta</a>
-                    </li>
-                </ul>
-
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="col-lg-8 well">
             {{-- <form method="POST" action="bentley/boleto/emitir_boleto.php" class=""> --}}
@@ -73,8 +58,7 @@
                         <input type="text" class="form-control" id="valor" placeholder="Valor do Produto">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Quantidade de itens: (<em
-                                class="atributo">amount</em>)</label>
+                        <label for="exampleInputPassword1">Quantidade de itens: (<em class="atributo">amount</em>)</label>
                         <select id="quantidade" class="form-control">
                             <?php for ($i = 1; $i < 20; $i++): ?>
                             <option><?= $i ?></option>
@@ -98,15 +82,12 @@
                         <label for="exampleInputPassword1">Telefone: (<em class="atributo">phone_number</em>)</label>
                         <input type="text" class="form-control" id="telefone" placeholder="Telefone">
                     </div>
-
-
                 </div>
                 <div class="col-lg-2">
                     <h4>Vencimento</h4>
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Data de vencimento: (<em
-                                class="atributo">expire_at</em>)</label>
+                        <label for="exampleInputEmail1">Data de vencimento: (<em class="atributo">expire_at</em>)</label>
                         <input type="text" class="form-control" id="vencimento" placeholder="Data de vencimento">
                     </div>
 
@@ -191,7 +172,6 @@
 
     </div>
 
-
     <!-- Este componente é utilizando para exibir um alerta(modal) para o usuário aguardar as consultas via API.  -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -224,12 +204,6 @@
                 Gerencianet Pagamentos do Brasil Ltda. • CNPJ: 09.089.356/0001-18<br />
                 Avenida Juscelino Kubitschek, 909 - Ouro Preto, Minas Gerais<br />
             </div>
-
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-    {{-- </div> --}}
-    {{-- @endsection --}}
-
-</body>
-
-</html>
+        </div>
+    </div>
+@endsection

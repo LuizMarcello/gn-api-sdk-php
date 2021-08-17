@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Bentley Juruena</title>
+    {{-- <title>Bentley Juruena</title> --}}
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/css/style.css">
+    <script type="text/javascript" src="../bootstrap/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="../bootstrap/js/jquery.mask.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/scripts.js"></script>
+    <title>Gerencianet</title>
 </head>
 
 <body>
@@ -40,7 +48,7 @@
 
     <main>
         @yield('content')
-        
+
         <ul>
             <li>
                 <a class="nav-link" href="{{ route('bentley.comprar.boleto') }}">Comprar</a>
